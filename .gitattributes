@@ -1,2 +1,45 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+
+package staticblocks;
+
+public class Shopping {
+	//static List<String> itemstoBuy;
+	static {
+		System.out.println("IN STATIC BLOCK");
+		System.out.println("WELCOME ");
+	}
+	public Shopping() {
+		System.out.println("In Shopping Constructor");
+	}
+	public static void buy(String item) {
+		System.out.println("Buying : "+ item);
+	}
+	
+	public void returnItem(String item) {
+		System.out.println("Returning :" + item);
+	}
+		
+	static {
+		System.out.println("IN STATIC BLOCK2");
+	}
+	
+}
+
+
+
+
+
+
+
+public class Mall {
+
+	public static void main(String[] args) {
+		Shopping sh1 = new Shopping();
+		Shopping sh2 = new Shopping();
+		Shopping.buy("Wooden spoon");
+		Shopping.buy("Wooden plate");
+	}
+
+}
